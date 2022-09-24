@@ -1,0 +1,27 @@
+{
+  "name": "experiment",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.32.0",
+    "@react-three/fiber": "^8.8.1",
+    "axios": "^0.27.2",
+    "gltfjsx": "^5.0.2",
+    "next": "12.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-three-fiber": "^6.0.13",
+    "three": "^0.144.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.144.0",
+    "eslint": "8.23.1",
+    "eslint-config-next": "12.3.1"
+  }
+}
