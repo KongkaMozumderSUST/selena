@@ -11,6 +11,7 @@
   "dependencies": {
     "@react-three/drei": "^9.32.0",
     "@react-three/fiber": "^8.8.1",
+    "antd": "^4.23.3",
     "axios": "^0.27.2",
     "gltfjsx": "^5.0.2",
     "next": "12.3.1",

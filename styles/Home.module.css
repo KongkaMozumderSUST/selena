@@ -127,3 +127,9 @@
     filter: invert(1);
   }
 }
+
+.popover {
+  background-color: #111;
+  color: #eaeaea;
+  
+}
