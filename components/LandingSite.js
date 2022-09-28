@@ -18,13 +18,13 @@ export default function LandingSite(props) {
       <mesh {...props} position={positionSatelite}>
         <sphereGeometry args={[0.025]} />
         <meshBasicMaterial opacity={1} color={props.color} />
-        <Html>
+        <Html distanceFactor={1.5}  >
           <div
             style={{
               width: "fit-content",
               height: "fit-content",
               borderRadius: "2px",
-              backgroundColor: "white",
+              // backgroundColor: "white",
               position: "absolute",
             }}>
             <pre>{props.station.apollo}</pre>
