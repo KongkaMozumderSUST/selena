@@ -26,6 +26,9 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ThreeDRotationIcon from "@mui/icons-material/ThreeDRotation";
 
+import { useSpring, animated, config } from "@react-spring/three";
+
+
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -48,9 +51,14 @@ const Sphere = ({ scaling, station, dm, sm, meteroite, rotation }) => {
   );
   const base = new THREE.TextureLoader().load("./moon.jpg");
 
+  const { scale } = useSpring({
+    scale: scaling,
+    config: config.wobbly,
+  });
+
   return (
     <group ref={ref}>
-      <mesh visible castShadow scale={scaling}>
+      <animated.mesh visible castShadow scale={scale}>
         <sphereGeometry attach='geometry' args={[MoonRadius, 100, 100]} />
         <meshPhongMaterial
           map={base}
@@ -61,7 +69,7 @@ const Sphere = ({ scaling, station, dm, sm, meteroite, rotation }) => {
           emissive={0x111111}
           color='white'
         />
-      </mesh>
+      </animated.mesh>
       {station &&
         ApolloStation.map((x) => (
           <>
@@ -95,7 +103,7 @@ const Sphere = ({ scaling, station, dm, sm, meteroite, rotation }) => {
         Meteroite.map((x) => (
           <LandingSite
             station={{ lat: x.Lat, long: x.Long, scaling: scaling }}
-            color='hotpink'
+            color='orange'
           />
         ))}
     </group>
@@ -260,7 +268,7 @@ Each of these seismometers measured all three components of ground displacement 
                 </h1>
               ) : (
                 <Typography sx={{ color: "white" }}>
-                  Moon
+                  MoonQuake Map
                   <ChevronLeftIcon />
                 </Typography>
               )}
@@ -270,7 +278,7 @@ Each of these seismometers measured all three components of ground displacement 
         <Divider />
         <List>
           <Box variant='button' onClick={ApolloStationShow}>
-            <SidebarItems key={1} name={"Apollo Station"} open={open} />
+            <SidebarItems key={"apollo"} name={"Apollo Station"} open={open} />
           </Box>
           <Box variant='button' onClick={DeepMoonQuakeShow}>
             <SidebarItems key={2} name={"Deep Moonquake"} open={open} />

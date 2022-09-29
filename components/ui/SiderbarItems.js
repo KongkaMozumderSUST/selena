@@ -2,26 +2,25 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ListItem from "@mui/material/ListItem";
-import Home from "@mui/icons-material/HomeRounded";
-import Inbox from "@mui/icons-material/Mail";
-import User from "@mui/icons-material/PersonRounded";
-import Shop from "@mui/icons-material/ShoppingCartRounded";
-import News from "@mui/icons-material/ArticleRounded";
-import Reports from "@mui/icons-material/FlagRounded";
-import Comments from "@mui/icons-material/ChatBubbleRounded";
-import Back from "@mui/icons-material/ArrowBackRounded";
+import RocketIcon from "@mui/icons-material/Rocket";
+import AdjustIcon from "@mui/icons-material/Adjust";
+import CircleIcon from "@mui/icons-material/Circle";
+import NightlightRoundIcon from "@mui/icons-material/NightlightRound";
 import ViewListIcon from "@mui/icons-material/ViewList";
 import Link from "next/link";
 const Icon = {
-  Inbox: <Inbox />,
-  Dashboard: <Home />,
-  Users: <User />,
-  Shop: <Shop />,
-  News: <News />,
-  Reports: <Reports />,
-  Comments: <Comments />,
-  Fixtures: <ViewListIcon />,
-  "Go Back": <Back />,
+  "Apollo Station": <RocketIcon />,
+  "Deep Moonquake": <CircleIcon />,
+  "Shallow Moonquake": <AdjustIcon />,
+  "Meteroite Moonquake": <NightlightRoundIcon />,
+
+  //   Users: <User />,
+  //   Shop: <Shop />,
+  //   News: <News />,
+  //   Reports: <Reports />,
+  //   Comments: <Comments />,
+  //   Fixtures: <ViewListIcon />,
+  //   "Go Back": <Back />,
 };
 
 export default function SidebarItems(props) {
