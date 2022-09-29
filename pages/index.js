@@ -74,6 +74,7 @@ const Sphere = ({ scaling, station, dm, sm, meteroite, rotation }) => {
         ApolloStation.map((x) => (
           <>
             <LandingSite
+              key='1'
               station={{
                 lat: x.Lat,
                 long: x.Long,
@@ -88,6 +89,7 @@ const Sphere = ({ scaling, station, dm, sm, meteroite, rotation }) => {
       {sm &&
         ShallowMoonquake.map((x) => (
           <LandingSite
+            key='2'
             station={{ lat: x.Lat, long: x.Long, scaling: scaling }}
             color='#006693'
           />
@@ -95,6 +97,7 @@ const Sphere = ({ scaling, station, dm, sm, meteroite, rotation }) => {
       {dm &&
         DeepMoonquake.map((x) => (
           <LandingSite
+            key='3'
             station={{ lat: x.Lat, long: x.Long, scaling: scaling }}
             color='red'
           />
@@ -102,6 +105,7 @@ const Sphere = ({ scaling, station, dm, sm, meteroite, rotation }) => {
       {meteroite &&
         Meteroite.map((x) => (
           <LandingSite
+            key='4'
             station={{ lat: x.Lat, long: x.Long, scaling: scaling }}
             color='orange'
           />
