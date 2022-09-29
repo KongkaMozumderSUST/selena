@@ -43,7 +43,9 @@ const MoonRadius = 2;
 const Sphere = ({ scaling, station, dm, sm, meteroite, rotation }) => {
   // console.log(scale);
   const ref = useRef();
-  if (rotation) useFrame(() => (ref.current.rotation.y += 0.005));
+  useFrame(() => {
+    if (rotation) ref.current.rotation.y += 0.005;
+  });
   const displacementMap = new THREE.TextureLoader().load(
     "./displacementMap.jpg"
   );
@@ -87,7 +89,7 @@ const Sphere = ({ scaling, station, dm, sm, meteroite, rotation }) => {
         ShallowMoonquake.map((x) => (
           <LandingSite
             station={{ lat: x.Lat, long: x.Long, scaling: scaling }}
-            color='green'
+            color='#006693'
           />
         ))}
       {dm &&
@@ -177,20 +179,20 @@ const Drawer = styled(MuiDrawer, {
 export default function Home(props) {
   //  const [zoomType, setZoomtype] = useState(1);
 
-    var text = (
-      <div>
-        <p>
-          The Apollo 11 seismometer returned data for just three weeks but
-          provided a useful first look at lunar seismology. More advanced
-          seismometers were deployed at the Apollo 12, 14, 15, and 16 landing
-          sites and transmitted data to Earth until September 1977. Each of
-          these seismometers measured all three components of ground
-          displacement (up-down, north-south, and east-west).
-        </p>
-      </div>
-    );
-    const [title, setTitle] = useState("Apollo Lunar Modules:");
-      const [description, setDescription] = useState(text);
+  var text = (
+    <div>
+      <p>
+        The Apollo 11 seismometer returned data for just three weeks but
+        provided a useful first look at lunar seismology. More advanced
+        seismometers were deployed at the Apollo 12, 14, 15, and 16 landing
+        sites and transmitted data to Earth until September 1977. Each of these
+        seismometers measured all three components of ground displacement
+        (up-down, north-south, and east-west).
+      </p>
+    </div>
+  );
+  const [title, setTitle] = useState("Apollo Lunar Modules:");
+  const [description, setDescription] = useState(text);
   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const [station, setStation] = useState(true);
@@ -220,38 +222,38 @@ export default function Home(props) {
     setDM(false);
     setSM(false);
     setMeteriote(false);
-     setTitle("Apollo Lunar Modules:");
-     setDescription(text);
+    setTitle("Apollo Lunar Modules:");
+    setDescription(text);
   };
   const DeepMoonQuakeShow = () => {
     setStation(false);
     setDM(true);
     setSM(false);
     setMeteriote(false);
-     setTitle("Deep Moonquake:");
-     setDescription(
-       "Deep moonquakes originate hundreds of kilometers below the surface. These deep-seated moonquakes are likely caused by tidal forces. Just as the Moon tugs on the Earth’s surface and causes ocean tides here, the Earth pulls on the Moon and deforms it. Researchers think that deep moonquakes are probably caused by the Moon continuously stretching and relaxing. "
-     );
+    setTitle("Deep Moonquake:");
+    setDescription(
+      "Deep moonquakes originate hundreds of kilometers below the surface. These deep-seated moonquakes are likely caused by tidal forces. Just as the Moon tugs on the Earth’s surface and causes ocean tides here, the Earth pulls on the Moon and deforms it. Researchers think that deep moonquakes are probably caused by the Moon continuously stretching and relaxing. "
+    );
   };
   const ShallowMoonQuakeShow = () => {
     setStation(false);
     setDM(false);
     setSM(true);
     setMeteriote(false);
-     setTitle("Shallow Moonquake:");
-     setDescription(
-       "Shallow moonquakes originate just a few tens of kilometers below the surface. Scientists think that shallow moonquakes are probably the result of the Moon shrinking over time. The Moon is getting smaller because its interior is cooling. This shrinkage—imagine a grape drying into a raisin—creates stress within the Moon, which triggers moonquakes near the surface. Shallow moonquakes often last longer and are more powerful than other types of moonquakes."
-     );
+    setTitle("Shallow Moonquake:");
+    setDescription(
+      "Shallow moonquakes originate just a few tens of kilometers below the surface. Scientists think that shallow moonquakes are probably the result of the Moon shrinking over time. The Moon is getting smaller because its interior is cooling. This shrinkage—imagine a grape drying into a raisin—creates stress within the Moon, which triggers moonquakes near the surface. Shallow moonquakes often last longer and are more powerful than other types of moonquakes."
+    );
   };
   const MeteroiteMoonQuakeShow = () => {
     setStation(false);
     setDM(false);
     setSM(false);
     setMeteriote(true);
-     setTitle("Meteorite Moonquake");
-     setDescription(
-       "Moonquakes can be caused by impacts. When an asteroid, comet, or meteoroid strikes the Moon’s surface, they can trigger moonquakes. Earth’s relatively thick atmosphere causes most space debris to burn up from friction before it strikes our planet’s surface. But the Moon isn’t so lucky. Because there is almost no atmosphere, most space debris heading toward the Moon impacts its surface, sometimes causing giant craters and moonquakes."
-     );
+    setTitle("Meteorite Moonquake");
+    setDescription(
+      "Moonquakes can be caused by impacts. When an asteroid, comet, or meteoroid strikes the Moon’s surface, they can trigger moonquakes. Earth’s relatively thick atmosphere causes most space debris to burn up from friction before it strikes our planet’s surface. But the Moon isn’t so lucky. Because there is almost no atmosphere, most space debris heading toward the Moon impacts its surface, sometimes causing giant craters and moonquakes."
+    );
   };
   return (
     <Box sx={{ display: "flex" }}>

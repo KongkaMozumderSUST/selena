@@ -4,13 +4,7 @@ import { Html } from "@react-three/drei";
 import { rotationQuaternionForCoordinates } from "../utils/GetLocation";
 import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
-import * as THREE from "three";
-import { BorderColor } from "@mui/icons-material";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
+
 
 const MoonRadius = 2;
 
