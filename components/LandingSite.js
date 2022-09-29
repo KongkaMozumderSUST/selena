@@ -2,16 +2,15 @@ import React, { useRef, useState } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
 import { rotationQuaternionForCoordinates } from "../utils/GetLocation";
-import Popover from '@mui/material/Popover';
-import Typography from '@mui/material/Typography';
+import Popover from "@mui/material/Popover";
+import Typography from "@mui/material/Typography";
 import * as THREE from "three";
 import { BorderColor } from "@mui/icons-material";
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
 
 const MoonRadius = 2;
 
@@ -23,8 +22,9 @@ export default function LandingSite(props) {
     0,
   ];
 
-  var string= "station: Apollo"+props.station.apollo+ "\n\t"+", latitude: "+props.station.lat+ "\n\t"+", longitude: "+props.station.lat;
-  var station=props.station.apollo;
+  var string =
+    "lat: " + props.station.lat + "\n\t" + ", long: " + props.station.lat;
+  var station = props.station.apollo;
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handlePopoverOpen = (event) => {
@@ -36,7 +36,7 @@ export default function LandingSite(props) {
   };
 
   const open = Boolean(anchorEl);
- 
+
   const rotationQuaternion = rotationQuaternionForCoordinates(
     props.station.lat,
     props.station.long
@@ -55,42 +55,40 @@ export default function LandingSite(props) {
               width: "fit-content",
               height: "fit-content",
               borderRadius: "2px",
+              padding: "2px",
               position: "absolute",
             }}>
             <Typography
-            sx={{ p: 1 }}
-            variant="title"
-        aria-owns={open ? 'mouse-over-popover' : undefined}
-        aria-haspopup="true"
-        onMouseEnter={handlePopoverOpen}
-        onMouseLeave={handlePopoverClose}
-      >
-        {station}
-      </Typography>
-            
+              sx={{ p: 1 }}
+              variant='title'
+              aria-owns={open ? "mouse-over-popover" : undefined}
+              aria-haspopup='true'
+              onMouseEnter={handlePopoverOpen}
+              onMouseLeave={handlePopoverClose}>
+              {station}
+            </Typography>
+
             <Popover
-            
-        id="mouse-over-popover"
-        sx={{
-          pointerEvents: 'none',
-          BorderColor: 'black'
-        }}
-        open={open}
-        anchorEl={anchorEl}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right',
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
-        }}
-        onClose={handlePopoverClose}
-        disableRestoreFocus
-      >
-        <Typography  variant='subtitle2'>{station}</Typography>
-        <Typography variant='caption'>{string}</Typography>
-      </Popover>
+              id='mouse-over-popover'
+              sx={{
+                pointerEvents: "none",
+                BorderColor: "black",
+              }}
+              open={open}
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "right",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              onClose={handlePopoverClose}
+              disableRestoreFocus>
+              <Typography variant='subtitle2'>{station}</Typography>
+              <Typography variant='caption'>{string}</Typography>
+            </Popover>
           </div>
         </Html>
       </mesh>

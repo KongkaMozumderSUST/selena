@@ -25,19 +25,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ThreeDRotationIcon from "@mui/icons-material/ThreeDRotation";
-
 import { useSpring, animated, config } from "@react-spring/three";
-
-
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-
-
 import { alpha } from "@mui/material/styles";
 
 import SidebarItems from "../components/ui/SiderbarItems";
+import Link from "next/link";
 const drawerWidth = 240;
 
 const MoonRadius = 2;
@@ -178,11 +170,6 @@ const Drawer = styled(MuiDrawer, {
 
 export default function Home(props) {
   //  const [zoomType, setZoomtype] = useState(1);
-  var text=<div>
-    <p>The Apollo 11 seismometer returned data for just three weeks but provided a useful first look at lunar seismology. More advanced seismometers were deployed at the Apollo 12, 14, 15, and 16 landing sites and transmitted data to Earth until September 1977.
-Each of these seismometers measured all three components of ground displacement (up-down, north-south, and east-west).
-</p>
-  </div>
   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const [station, setStation] = useState(true);
@@ -191,8 +178,6 @@ Each of these seismometers measured all three components of ground displacement 
   const [meteroite, setMeteriote] = useState(false);
   const [rotation, setRotation] = useState(true);
   const [scaling, setScale] = useState(1);
-  const [title,setTitle]=useState("Apollo Lunar Modules:")
-  const [description,setDescription]=useState(text)
   const ZoomIn = (e) => {
     // setZoomtype(1 + Math.random());
     setScale((scaling) => scaling + 0.1);
@@ -214,32 +199,24 @@ Each of these seismometers measured all three components of ground displacement 
     setDM(false);
     setSM(false);
     setMeteriote(false);
-    setTitle("Apollo Lunar Modules:");
-    setDescription(text);
   };
   const DeepMoonQuakeShow = () => {
     setStation(false);
     setDM(true);
     setSM(false);
     setMeteriote(false);
-    setTitle("Deep Moonquake:")
-    setDescription("Deep moonquakes originate hundreds of kilometers below the surface. These deep-seated moonquakes are likely caused by tidal forces. Just as the Moon tugs on the Earth’s surface and causes ocean tides here, the Earth pulls on the Moon and deforms it. Researchers think that deep moonquakes are probably caused by the Moon continuously stretching and relaxing. ")
   };
   const ShallowMoonQuakeShow = () => {
     setStation(false);
     setDM(false);
     setSM(true);
     setMeteriote(false);
-    setTitle("Shallow Moonquake:")
-    setDescription("Shallow moonquakes originate just a few tens of kilometers below the surface. Scientists think that shallow moonquakes are probably the result of the Moon shrinking over time. The Moon is getting smaller because its interior is cooling. This shrinkage—imagine a grape drying into a raisin—creates stress within the Moon, which triggers moonquakes near the surface. Shallow moonquakes often last longer and are more powerful than other types of moonquakes.")
   };
   const MeteroiteMoonQuakeShow = () => {
     setStation(false);
     setDM(false);
     setSM(false);
     setMeteriote(true);
-    setTitle("Meteorite Moonquake")
-    setDescription("Moonquakes can be caused by impacts. When an asteroid, comet, or meteoroid strikes the Moon’s surface, they can trigger moonquakes. Earth’s relatively thick atmosphere causes most space debris to burn up from friction before it strikes our planet’s surface. But the Moon isn’t so lucky. Because there is almost no atmosphere, most space debris heading toward the Moon impacts its surface, sometimes causing giant craters and moonquakes.")
   };
   return (
     <Box sx={{ display: "flex" }}>
@@ -287,13 +264,13 @@ Each of these seismometers measured all three components of ground displacement 
             <SidebarItems key={3} name={"Shallow Moonquake"} open={open} />
           </Box>
           <Box variant='button' onClick={MeteroiteMoonQuakeShow}>
-            <SidebarItems
-              key={4}
-              name={"Meteroite Moonquake"}
-              open={open}
-              onClick={MeteroiteMoonQuakeShow}
-            />
+            <SidebarItems key={4} name={"Meteroite Moonquake"} open={open} />
           </Box>
+          <Link href='/learn_moonquake'>
+            <Box variant='button'>
+              <SidebarItems key={4} name={"Learn Moonquake"} open={open} />
+            </Box>
+          </Link>
         </List>
       </Drawer>
 
@@ -346,23 +323,6 @@ Each of these seismometers measured all three components of ground displacement 
         <ambientLight />
         <directionalLight position={[5, 3, 5]} color={0xffffff} intensity={1} />
         <Html>
-          <div>
-          {/* <div  style={{
-             position:"relative",
-             bottom: "45vh",
-             left: "27vw",
-           }}>
-         <Card sx={{minWidth:250, maxWidth: 500  }} >
-     <CardContent>
-       <Typography gutterBottom variant="h6" component="div">
-         {title}
-       </Typography>
-       <Typography variant="subtitle2" color="text.secondary">
-         {description}
-       </Typography>
-     </CardContent>
-   </Card>
-   </div> */}
           <div
             style={{
               position: "relative",
@@ -406,23 +366,6 @@ Each of these seismometers measured all three components of ground displacement 
                 <ThreeDRotationIcon sx={{ color: "black", fontSize: "22px" }} />
               </IconButton>
             </Stack>
-          </div>
-          <div  style={{
-             position:"relative",
-             bottom: "45vh",
-             left: "27vw",
-           }}>
-         <Card sx={{minWidth:250, maxWidth: 500  }} >
-     <CardContent>
-       <Typography gutterBottom variant="h6" component="div">
-         {title}
-       </Typography>
-       <Typography variant="subtitle2" color="text.secondary">
-         {description}
-       </Typography>
-     </CardContent>
-   </Card>
-   </div>
           </div>
         </Html>
       </Canvas>
