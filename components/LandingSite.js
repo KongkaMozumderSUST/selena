@@ -6,6 +6,12 @@ import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
 import * as THREE from "three";
 import { BorderColor } from "@mui/icons-material";
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+
 
 const MoonRadius = 2;
 
@@ -60,6 +66,7 @@ export default function LandingSite(props) {
       >
         {station}
       </Typography>
+            
             <Popover
             
         id="mouse-over-popover"
@@ -80,8 +87,8 @@ export default function LandingSite(props) {
         onClose={handlePopoverClose}
         disableRestoreFocus
       >
-        <Typography sx={{p:1}} variant='title'>{station}</Typography>
-        <Typography sx={{ p: 1 }}>{string}</Typography>
+        <Typography  variant='subtitle2'>{station}</Typography>
+        <Typography variant='caption'>{string}</Typography>
       </Popover>
           </div>
         </Html>

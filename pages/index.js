@@ -26,6 +26,12 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ThreeDRotationIcon from "@mui/icons-material/ThreeDRotation";
 
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+
+
 import { alpha } from "@mui/material/styles";
 
 import SidebarItems from "../components/ui/SiderbarItems";
@@ -172,6 +178,8 @@ export default function Home(props) {
   const [meteroite, setMeteriote] = useState(false);
   const [rotation, setRotation] = useState(true);
   const [scaling, setScale] = useState(1);
+  const [title,setTitle]=useState("Apollo Stations")
+  const [description,setDescription]=useState("Apollo Stations are fun")
   const ZoomIn = (e) => {
     // setZoomtype(1 + Math.random());
     setScale((scaling) => scaling + 0.1);
@@ -193,24 +201,32 @@ export default function Home(props) {
     setDM(false);
     setSM(false);
     setMeteriote(false);
+    setTitle("Apollo Stations:");
+    setDescription("Apollo station");
   };
   const DeepMoonQuakeShow = () => {
     setStation(false);
     setDM(true);
     setSM(false);
     setMeteriote(false);
+    setTitle("Deep Moonquake:")
+    setDescription("Deep moonquakes originate hundreds of kilometers below the surface. These deep-seated moonquakes are likely caused by tidal forces. Just as the Moon tugs on the Earth’s surface and causes ocean tides here, the Earth pulls on the Moon and deforms it. Researchers think that deep moonquakes are probably caused by the Moon continuously stretching and relaxing. ")
   };
   const ShallowMoonQuakeShow = () => {
     setStation(false);
     setDM(false);
     setSM(true);
     setMeteriote(false);
+    setTitle("Shallow Moonquake:")
+    setDescription("Shallow moonquakes originate just a few tens of kilometers below the surface. Scientists think that shallow moonquakes are probably the result of the Moon shrinking over time. The Moon is getting smaller because its interior is cooling. This shrinkage—imagine a grape drying into a raisin—creates stress within the Moon, which triggers moonquakes near the surface. Shallow moonquakes often last longer and are more powerful than other types of moonquakes.")
   };
   const MeteroiteMoonQuakeShow = () => {
     setStation(false);
     setDM(false);
     setSM(false);
     setMeteriote(true);
+    setTitle("Meteorite Moonquake")
+    setDescription("Moonquakes can be caused by impacts. When an asteroid, comet, or meteoroid strikes the Moon’s surface, they can trigger moonquakes. Earth’s relatively thick atmosphere causes most space debris to burn up from friction before it strikes our planet’s surface. But the Moon isn’t so lucky. Because there is almost no atmosphere, most space debris heading toward the Moon impacts its surface, sometimes causing giant craters and moonquakes.")
   };
   return (
     <Box sx={{ display: "flex" }}>
@@ -317,6 +333,7 @@ export default function Home(props) {
         <ambientLight />
         <directionalLight position={[5, 3, 5]} color={0xffffff} intensity={1} />
         <Html>
+          <div>
           <div
             style={{
               position: "relative",
@@ -360,6 +377,23 @@ export default function Home(props) {
                 <ThreeDRotationIcon sx={{ color: "black", fontSize: "22px" }} />
               </IconButton>
             </Stack>
+          </div>
+          <div  style={{
+             position:"relative",
+             bottom: "45vh",
+             left: "27vw",
+           }}>
+         <Card sx={{minWidth:250, maxWidth: 500 }} >
+     <CardContent>
+       <Typography gutterBottom variant="h5" component="div">
+         {title}
+       </Typography>
+       <Typography variant="body2" color="text.secondary">
+         {description}
+       </Typography>
+     </CardContent>
+   </Card>
+   </div>
           </div>
         </Html>
       </Canvas>
