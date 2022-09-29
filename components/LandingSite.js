@@ -78,11 +78,11 @@ export default function LandingSite(props) {
         anchorEl={anchorEl}
         anchorOrigin={{
           vertical: 'bottom',
-          horizontal: 'left',
+          horizontal: 'right',
         }}
         transformOrigin={{
           vertical: 'top',
-          horizontal: 'left',
+          horizontal: 'right',
         }}
         onClose={handlePopoverClose}
         disableRestoreFocus

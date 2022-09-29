@@ -170,6 +170,11 @@ const Drawer = styled(MuiDrawer, {
 
 export default function Home(props) {
   //  const [zoomType, setZoomtype] = useState(1);
+  var text=<div>
+    <p>The Apollo 11 seismometer returned data for just three weeks but provided a useful first look at lunar seismology. More advanced seismometers were deployed at the Apollo 12, 14, 15, and 16 landing sites and transmitted data to Earth until September 1977.
+Each of these seismometers measured all three components of ground displacement (up-down, north-south, and east-west).
+</p>
+  </div>
   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const [station, setStation] = useState(true);
@@ -178,8 +183,8 @@ export default function Home(props) {
   const [meteroite, setMeteriote] = useState(false);
   const [rotation, setRotation] = useState(true);
   const [scaling, setScale] = useState(1);
-  const [title,setTitle]=useState("Apollo Stations")
-  const [description,setDescription]=useState("Apollo Stations are fun")
+  const [title,setTitle]=useState("Apollo Lunar Modules:")
+  const [description,setDescription]=useState(text)
   const ZoomIn = (e) => {
     // setZoomtype(1 + Math.random());
     setScale((scaling) => scaling + 0.1);
@@ -201,8 +206,8 @@ export default function Home(props) {
     setDM(false);
     setSM(false);
     setMeteriote(false);
-    setTitle("Apollo Stations:");
-    setDescription("Apollo station");
+    setTitle("Apollo Lunar Modules:");
+    setDescription(text);
   };
   const DeepMoonQuakeShow = () => {
     setStation(false);
@@ -334,6 +339,22 @@ export default function Home(props) {
         <directionalLight position={[5, 3, 5]} color={0xffffff} intensity={1} />
         <Html>
           <div>
+          {/* <div  style={{
+             position:"relative",
+             bottom: "45vh",
+             left: "27vw",
+           }}>
+         <Card sx={{minWidth:250, maxWidth: 500  }} >
+     <CardContent>
+       <Typography gutterBottom variant="h6" component="div">
+         {title}
+       </Typography>
+       <Typography variant="subtitle2" color="text.secondary">
+         {description}
+       </Typography>
+     </CardContent>
+   </Card>
+   </div> */}
           <div
             style={{
               position: "relative",
@@ -383,12 +404,12 @@ export default function Home(props) {
              bottom: "45vh",
              left: "27vw",
            }}>
-         <Card sx={{minWidth:250, maxWidth: 500 }} >
+         <Card sx={{minWidth:250, maxWidth: 500  }} >
      <CardContent>
-       <Typography gutterBottom variant="h5" component="div">
+       <Typography gutterBottom variant="h6" component="div">
          {title}
        </Typography>
-       <Typography variant="body2" color="text.secondary">
+       <Typography variant="subtitle2" color="text.secondary">
          {description}
        </Typography>
      </CardContent>
