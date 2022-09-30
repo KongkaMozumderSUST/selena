@@ -1,16 +1,15 @@
 import { Typography, Box } from "@mui/material";
 import Image from "next/image";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import { shadows } from "@mui/system";
 
 export default function LearnMoonquakeMap() {
-  return (
-    <Box sx={{ backgroundImage: 'url("bg.jpg")' }}>
-      <Typography
-        sx={{
-          fontFamily: "Comfortaa",
-          fontSize: "14px",
-          p:9,
-          color: "white",
-        }}>
+  var text1 = (
+    <div>
+      <p>
         Around the world, there are billions of people living within the danger
         zone for earthquakes, and as history has shown us (along with plenty of
         Hollywood renditions), earthquakes can be incredibly devastating. From
@@ -31,36 +30,34 @@ export default function LearnMoonquakeMap() {
         quite a problem, so understanding them is crucial. Moonquakes can be
         caused by the tidal pull of Earth on the moon, meteor impacts, or the
         change in temperature on the surface of the moon. There are at least
-        four different kinds of moonquakes: (1) deep moonquakes about 700 km
-        below the surface, probably caused by tides; (2) vibrations from the
-        impact of meteorites; (3) thermal quakes caused by the expansion of the
-        frigid crust when first illuminated by the morning sun after two weeks
-        of deep-freeze lunar night; and (4) shallow moonquakes only 20 or 30
-        kilometers below the surface. Our website shows all the seismic
-        phenomena caught by apollo 11-17 between 19 November 1969 - 30 September
-        1977 and categorized them according to their type. With the help of our
-        website, we want to spread knowledge to general people on the earth
-        about moonquakes. They will know where the quakes happen the most, how
-        they happen, how long they last etc. Thus enabling us to secure a one
-        step ahead to colonize the moon with quake-proof housing.
-      </Typography>
-      <Typography
-        sx={{
-          fontFamily: "Comfortaa",
-          fontWeight: "bold",
-          fontSize: "14px",
-          color: "white",
-          m: 8,
-        }}>
-        Moonquake types
-      </Typography>
-      <Typography
-        sx={{
-          fontFamily: "Comfortaa",
-          fontSize: "14px",
-          m: 8,
-          color: "white",
-        }}>
+        four different kinds of moonquakes:
+      </p>
+      <p>
+        (1) deep moonquakes about 700 km below the surface, probably caused by
+        tides;
+      </p>
+      <p>(2) vibrations from the impact of meteorites; </p>
+      <p>
+        (3) thermal quakes caused by the expansion of the frigid crust when
+        first illuminated by the morning sun after two weeks of deep-freeze
+        lunar night;
+      </p>
+      <p>
+        (4) shallow moonquakes only 20 or 30 kilometers below the surface. Our
+        website shows all the seismic phenomena caught by apollo 11-17 between
+        19 November 1969 - 30 September 1977 and categorized them according to
+        their type. With the help of our website, we want to spread knowledge to
+        general people on the earth about moonquakes. They will know where the
+        quakes happen the most, how they happen, how long they last etc. Thus
+        enabling us to secure a one step ahead to colonize the moon with
+        quake-proof housing.
+      </p>
+    </div>
+  );
+
+  var text2 = (
+    <div>
+      <p>
         Moonquake Summary: Deep Moonquake: Deep moonquakes originate hundreds of
         kilometers below the surface. These deep-seated moonquakes are likely
         caused by tidal forces. Just as the Moon tugs on the Earth&quot;s
@@ -91,7 +88,131 @@ export default function LearnMoonquakeMap() {
         used for traveling between the moons surface and an orbiting
         spacecraft.Lunar module cause far lighter impact on the moon than the
         launch vehicle but the impact still is significant.
+      </p>
+    </div>
+  );
+  var text3 = (
+    <div>
+      <p>
+        The Apollo 11 seismometer returned data for just three weeks but
+        provided a useful first look at lunar seismology. More advanced
+        seismometers were deployed at the Apollo 12, 14, 15, and 16 landing
+        sites and transmitted data to Earth until September 1977. Each of these
+        seismometers measured all three components of ground displacement
+        (up-down, north-south, and east-west).{" "}
+      </p>
+      <h4>Apollo 11</h4>
+      <p>
+        The Apollo 11 Lunar Module (LM) Eagle was the first crewed vehicle to
+        land on the Moon. It carried two astronauts, Commander Neil A. Armstrong
+        and LM pilot Edwin E. Buzz Aldrin, Jr., the first men to walk on the
+        Moon. Also included on the LM was the Early Apollo Scientific Experiment
+        Package (EASEP), which consisted of several self-contained experiments
+        to be deployed and left on the lunar surface, and other scientific and
+        sample collection apparatus.
+      </p>
+      <h4>Apollo 12</h4>
+      <p>
+        The Apollo 12 Lunar Module (LM) Intrepid was the second crewed vehicle
+        to land on the Moon. It carried two astronauts, Commander Charles P.
+        Pete Conrad and LM pilot Alan L. Bean, the third and fourth men to walk
+        on the Moon. Also included on the LM was the Apollo Lunar Surface
+        Experiments Package (ALSEP) containing scientific experiments to be
+        deployed and left on the lunar surface and other scientific and sample
+        collection apparatus. The experiments performed on the Moon, in addition
+        to the ALSEP suite, were geologic sample collection, surface
+        photography, soil mechanics investigations to study the physical
+        properties of the lunar regolith, the solar wind composition experiment
+        which collected samples of solar wind for return to Earth, and
+        collection of parts of the Surveyor 3 spacecraft.
+      </p>
+      <h4>Apollo 15</h4>
+      <p>
+        The Apollo 15 lunar module (LM) Falcon was the fourth crewed vehicle to
+        land on the Moon. It carried two astronauts, Commander David R. Scott
+        and LM pilot James B. Irwin, the seventh and eighth men to walk on the
+        Moon. The LM also carried a Lunar Roving Vehicle (LRV), an Apollo Lunar
+        Surface Experiments Package (ALSEP) that contained scientific
+        experiments to be deployed and left on the lunar surface, and other
+        scientific and sample collection apparatus. The experiments performed on
+        the Moon, in addition to the ALSEP suite, were geologic sample
+        collection, surface photography, soil mechanics investigations to study
+        physical properties of the lunar regolith, and the solar wind
+        composition experiment which collected samples of solar wind particles
+        for return to Earth.
+      </p>
+      <h4>Apollo 16</h4>
+      <p>
+        The Apollo 16 lunar module (LM) Orion was the fifth crewed vehicle to
+        land on the Moon. It carried two astronauts, Commander John W. Young and
+        LM pilot Charles M. Duke Jr., the ninth and tenth men to walk on the
+        Moon. The LM also carried a Lunar Roving Vehicle (LRV), an Apollo Lunar
+        Surface Experiments Package (ALSEP) that contained scientific
+        experiments to be deployed and left on the lunar surface, and other
+        scientific and sample collection apparatus. The experiments performed on
+        the Moon, in addition to the ALSEP suite, were geologic sample
+        collection, surface photography, soil mechanics investigations to study
+        the physical properties of the lunar regolith, the solar wind
+        composition experiment which collected samples of solar wind for return
+        to Earth, a cosmic-ray detector to measure heavy cosmic rays, a
+        far-ultraviolet camera for lyman-alpha astronomical observations, and a
+        portable surface magnetometer to study local magnetic sources.
+      </p>
+      <h4>Apollo 17</h4>
+      <p>
+        The Apollo 17 Lunar Module (LM) Challenger was the sixth and last lunar
+        lander in the Apollo program. It carried two astronauts, Commander
+        Eugene A. Cernan and LM pilot Harrison H. Schmitt, the eleventh and
+        twelfth men to walk on the Moon. Schmitt was the first
+        scientist-astronaut to walk on the Moon. The LM also carried a Lunar
+        Roving Vehicle (LRV), an Apollo Lunar Surface Experiments Package
+        (ALSEP) that contained scientific experiments to be deployed and left on
+        the lunar surface, and other scientific and sample collection apparatus.
+      </p>
+    </div>
+  );
+
+  return (
+    <Box sx={{ backgroundImage: 'url("bg.jpg")' }}>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Card
+          sx={{
+            minWidth: 500,
+            maxWidth: 900,
+            boxShadow: 3,
+          }}>
+          <CardContent>
+            <Typography variant='subtitle2' color='text.secondary'>
+              {text1}
+            </Typography>
+          </CardContent>
+        </Card>
+      </div>
+      <Typography
+        sx={{
+          fontFamily: "Comfortaa",
+          fontWeight: "bold",
+          fontSize: "14px",
+          color: "white",
+          m: 8,
+        }}>
+        Moonquake types
       </Typography>
+      <div
+        style={{ display: "flex", justifyContent: "center", marginBottom: 20 }}>
+        <Card
+          sx={{
+            minWidth: 500,
+            maxWidth: 900,
+            boxShadow: 3,
+          }}>
+          <CardContent>
+            <Typography variant='subtitle2' color='text.secondary'>
+              {text2}
+            </Typography>
+          </CardContent>
+        </Card>
+      </div>
       <Box sx={{ ml: 20 }}>
         <Image
           src='/Apollo_11.jpg'
@@ -111,78 +232,19 @@ export default function LearnMoonquakeMap() {
         }}>
         Apollo Lunar Modules:
       </Typography>
-      <Typography
-        sx={{
-          fontFamily: "Comfortaa",
-          fontSize: "14px",
-          p: 8,
-          color: "white",
-        }}>
-        The Apollo 11 seismometer returned data for just three weeks but
-        provided a useful first look at lunar seismology. More advanced
-        seismometers were deployed at the Apollo 12, 14, 15, and 16 landing
-        sites and transmitted data to Earth until September 1977. Each of these
-        seismometers measured all three components of ground displacement
-        (up-down, north-south, and east-west). Apollo 11: The Apollo 11 Lunar
-        Module (LM) Eagle was the first crewed vehicle to land on the Moon. It
-        carried two astronauts, Commander Neil A. Armstrong and LM pilot Edwin
-        E. Buzz Aldrin, Jr., the first men to walk on the Moon. Also included on
-        the LM was the Early Apollo Scientific Experiment Package (EASEP), which
-        consisted of several self-contained experiments to be deployed and left
-        on the lunar surface, and other scientific and sample collection
-        apparatus. Apollo 12: The Apollo 12 Lunar Module (LM) Intrepid was the
-        second crewed vehicle to land on the Moon. It carried two astronauts,
-        Commander Charles P. Pete Conrad and LM pilot Alan L. Bean, the third
-        and fourth men to walk on the Moon. Also included on the LM was the
-        Apollo Lunar Surface Experiments Package (ALSEP) containing scientific
-        experiments to be deployed and left on the lunar surface and other
-        scientific and sample collection apparatus. The experiments performed on
-        the Moon, in addition to the ALSEP suite, were geologic sample
-        collection, surface photography, soil mechanics investigations to study
-        the physical properties of the lunar regolith, the solar wind
-        composition experiment which collected samples of solar wind for return
-        to Earth, and collection of parts of the Surveyor 3 spacecraft. Apollo
-        14: The Apollo 14 Lunar Module (LM) Antares was the third crewed vehicle
-        to land on the Moon. It carried two astronauts, Commander Alan B.
-        Shepard Jr. and LM pilot Edgar D. Mitchell, the fifth and sixth men to
-        walk on the Moon. Also included on the LM was the Apollo Lunar Surface
-        Experiments Package (ALSEP) containing scientific experiments to be
-        deployed and left on the lunar surface and other scientific and sample
-        collection apparatus Apollo 15: The Apollo 15 lunar module (LM) Falcon
-        was the fourth crewed vehicle to land on the Moon. It carried two
-        astronauts, Commander David R. Scott and LM pilot James B. Irwin, the
-        seventh and eighth men to walk on the Moon. The LM also carried a Lunar
-        Roving Vehicle (LRV), an Apollo Lunar Surface Experiments Package
-        (ALSEP) that contained scientific experiments to be deployed and left on
-        the lunar surface, and other scientific and sample collection apparatus.
-        The experiments performed on the Moon, in addition to the ALSEP suite,
-        were geologic sample collection, surface photography, soil mechanics
-        investigations to study physical properties of the lunar regolith, and
-        the solar wind composition experiment which collected samples of solar
-        wind particles for return to Earth. Apollo 16: The Apollo 16 lunar
-        module (LM) Orion was the fifth crewed vehicle to land on the Moon. It
-        carried two astronauts, Commander John W. Young and LM pilot Charles M.
-        Duke Jr., the ninth and tenth men to walk on the Moon. The LM also
-        carried a Lunar Roving Vehicle (LRV), an Apollo Lunar Surface
-        Experiments Package (ALSEP) that contained scientific experiments to be
-        deployed and left on the lunar surface, and other scientific and sample
-        collection apparatus. The experiments performed on the Moon, in addition
-        to the ALSEP suite, were geologic sample collection, surface
-        photography, soil mechanics investigations to study the physical
-        properties of the lunar regolith, the solar wind composition experiment
-        which collected samples of solar wind for return to Earth, a cosmic-ray
-        detector to measure heavy cosmic rays, a far-ultraviolet camera for
-        lyman-alpha astronomical observations, and a portable surface
-        magnetometer to study local magnetic sources. Apollo 17: The Apollo 17
-        Lunar Module (LM) Challenger was the sixth and last lunar lander in the
-        Apollo program. It carried two astronauts, Commander Eugene A. Cernan
-        and LM pilot Harrison H. Schmitt, the eleventh and twelfth men to walk
-        on the Moon. Schmitt was the first scientist-astronaut to walk on the
-        Moon. The LM also carried a Lunar Roving Vehicle (LRV), an Apollo Lunar
-        Surface Experiments Package (ALSEP) that contained scientific
-        experiments to be deployed and left on the lunar surface, and other
-        scientific and sample collection apparatus.
-      </Typography>
+      <div style={{ display: "flex", justifyContent: "center", boxShadow: 3 }}>
+        <Card
+          sx={{
+            minWidth: 500,
+            maxWidth: 900,
+          }}>
+          <CardContent>
+            <Typography variant='subtitle2' color='text.secondary'>
+              {text3}
+            </Typography>
+          </CardContent>
+        </Card>
+      </div>
     </Box>
   );
 }

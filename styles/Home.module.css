@@ -127,3 +127,6 @@
     filter: invert(1);
   }
 }
+.heroImage {
+  right: 20%;
+}
