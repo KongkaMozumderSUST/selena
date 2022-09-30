@@ -5,9 +5,56 @@ import Paper from 'material-ui/Paper';
 
 
 export default function LearnMoonquakeMap() {
+  var text1=<div>
+   <p>Around the world, there are billions of people living within the danger
+        zone for earthquakes, and as history has shown us (along with plenty of
+        Hollywood renditions), earthquakes can be incredibly devastating. From
+        toppling buildings and cracking open the surface of the earth itself,
+        these natural phenomena are terrifying and unpredictable. Nearly 240,000
+        miles away from our planet, our beloved moon wrestles with a similar
+        problem, but obviously, they are called moonquakes. Since no one lives
+        on our lunar neighbor, moonquakes do not get much attention, but they
+        can be incredibly powerful, and last up to 20 times longer than
+        earthquakes on Earth! The moon is dry, cool and mostly rigid, like a
+        chunk of stone or iron. So moonquakes set it vibrating like a tuning
+        fork. According to Neal Armstrong the moon was ringing like a bell when
+        he first felt a moonquake. Even if a moonquake is not intense, it could
+        continue more than 10 minutes and for smaller trembling to continue for
+        hours afterwards. Neal said, for a lunar habitat, that persistence could
+        be more significant than a moonquakes magnitude. If we ever decide to
+        colonize our nearest celestial companion, these quakes could prove to be
+        quite a problem, so understanding them is crucial. Moonquakes can be
+        caused by the tidal pull of Earth on the moon, meteor impacts, or the
+        change in temperature on the surface of the moon. There are at least
+        four different kinds of moonquakes:</p>
+        <p>(1) deep moonquakes about 700 km
+        below the surface, probably caused by tides;</p>
+        <p>(2) vibrations from the
+        impact of meteorites; </p>
+        <p>(3) thermal quakes caused by the expansion of the
+        frigid crust when first illuminated by the morning sun after two weeks
+        of deep-freeze lunar night;</p>
+        <p>(4) shallow moonquakes only 20 or 30
+        kilometers below the surface. Our website shows all the seismic
+        phenomena caught by apollo 11-17 between 19 November 1969 - 30 September
+        1977 and categorized them according to their type. With the help of our
+        website, we want to spread knowledge to general people on the earth
+        about moonquakes. They will know where the quakes happen the most, how
+        they happen, how long they last etc. Thus enabling us to secure a one
+        step ahead to colonize the moon with quake-proof housing.</p>
+  </div>
   return (
     <Box sx={{ backgroundImage: 'url("bg.jpg")' }}>
       <Typography
+        sx={{
+          fontFamily: "Comfortaa",
+          fontSize: "14px",
+          p:9,
+          color: "white",
+        }}>
+          {text1}
+        </Typography>
+      {/* <Typography
         sx={{
           fontFamily: "Comfortaa",
           fontSize: "14px",
@@ -46,7 +93,7 @@ export default function LearnMoonquakeMap() {
         about moonquakes. They will know where the quakes happen the most, how
         they happen, how long they last etc. Thus enabling us to secure a one
         step ahead to colonize the moon with quake-proof housing.
-      </Typography>
+      </Typography> */}
       <Typography
         sx={{
           fontFamily: "Comfortaa",
