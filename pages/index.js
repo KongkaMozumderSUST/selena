@@ -318,7 +318,7 @@ export default function Home(props) {
                 </h1>
               ) : (
                 <Typography sx={{ color: "white" }}>
-                  MoonQuake Map
+                  Selena
                   <ChevronLeftIcon />
                 </Typography>
               )}
