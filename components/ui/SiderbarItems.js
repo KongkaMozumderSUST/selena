@@ -7,12 +7,16 @@ import AdjustIcon from "@mui/icons-material/Adjust";
 import CircleIcon from "@mui/icons-material/Circle";
 import NightlightRoundIcon from "@mui/icons-material/NightlightRound";
 import ViewListIcon from "@mui/icons-material/ViewList";
+import CrisisAlertIcon from "@mui/icons-material/CrisisAlert";
+import LightbulbIcon from "@mui/icons-material/Lightbulb";
 import Link from "next/link";
 const Icon = {
   "Apollo Station": <RocketIcon />,
   "Deep Moonquake": <CircleIcon />,
   "Shallow Moonquake": <AdjustIcon />,
   "Meteroite Moonquake": <NightlightRoundIcon />,
+  "Artifical Impact": <CrisisAlertIcon />,
+  "Learn Moonquake": <LightbulbIcon />,
 
   //   Users: <User />,
   //   Shop: <Shop />,

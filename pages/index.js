@@ -4,6 +4,7 @@ import { OrbitControls, Html } from "@react-three/drei";
 import LandingSite from "../components/LandingSite";
 import ShallowMoonquake from "../data/nakamura_1979_sm_locations.json";
 import DeepMoonquake from "../data/nakamura_2005_dm_locations.json";
+import ArtificalImpact from "../data/Ai.json";
 import ApolloStation from "../data/LM.json";
 import Meteroite from "../data/meteroite.json";
 import * as THREE from "three";
@@ -40,7 +41,7 @@ const drawerWidth = 240;
 
 const MoonRadius = 2;
 
-const Sphere = ({ scaling, station, dm, sm, meteroite, rotation }) => {
+const Sphere = ({ scaling, station, dm, sm, meteroite, rotation, ai }) => {
   // console.log(scale);
   const ref = useRef();
   useFrame(() => {
@@ -82,6 +83,21 @@ const Sphere = ({ scaling, station, dm, sm, meteroite, rotation }) => {
                 scaling: scaling,
               }}
               color='blue'
+            />
+          </>
+        ))}
+      {ai &&
+        ArtificalImpact.map((x) => (
+          <>
+            <LandingSite
+              key='1'
+              station={{
+                lat: x.Lat,
+                long: x.Long,
+                apollo: x.LM,
+                scaling: scaling,
+              }}
+              color='black'
             />
           </>
         ))}
@@ -203,6 +219,7 @@ export default function Home(props) {
   const [dm, setDM] = useState(false);
   const [sm, setSM] = useState(false);
   const [meteroite, setMeteriote] = useState(false);
+  const [ai, setAi] = useState(false);
   const [rotation, setRotation] = useState(true);
   const [scaling, setScale] = useState(1);
   const ZoomIn = (e) => {
@@ -226,6 +243,7 @@ export default function Home(props) {
     setDM(false);
     setSM(false);
     setMeteriote(false);
+    setAi(false);
     setTitle("Apollo Lunar Modules:");
     setDescription(text);
   };
@@ -235,8 +253,9 @@ export default function Home(props) {
     setSM(false);
     setMeteriote(false);
     setTitle("Deep Moonquake:");
+    setAi(false);
     setDescription(
-      "Deep moonquakes originate hundreds of kilometers below the surface. These deep-seated moonquakes are likely caused by tidal forces. Just as the Moon tugs on the Earth’s surface and causes ocean tides here, the Earth pulls on the Moon and deforms it. Researchers think that deep moonquakes are probably caused by the Moon continuously stretching and relaxing. "
+      "Deep moonquakes originate hundreds of kilometers below the surface. These deep-seated moonquakes are likely caused by tidal forces. Just as the Moon tugs on the Earth’s surface and causes ocean tides here, the Earth pulls on the Moon and deforms it. Researchers think that deep moonquakes are probably caused by the Moon continuously stretching and relaxing. Deep moonquake lasted long for 10 min "
     );
   };
   const ShallowMoonQuakeShow = () => {
@@ -245,6 +264,7 @@ export default function Home(props) {
     setSM(true);
     setMeteriote(false);
     setTitle("Shallow Moonquake:");
+    setAi(false);
     setDescription(
       "Shallow moonquakes originate just a few tens of kilometers below the surface. Scientists think that shallow moonquakes are probably the result of the Moon shrinking over time. The Moon is getting smaller because its interior is cooling. This shrinkage—imagine a grape drying into a raisin—creates stress within the Moon, which triggers moonquakes near the surface. Shallow moonquakes often last longer and are more powerful than other types of moonquakes."
     );
@@ -255,8 +275,20 @@ export default function Home(props) {
     setSM(false);
     setMeteriote(true);
     setTitle("Meteorite Moonquake");
+    setAi(false);
     setDescription(
-      "Moonquakes can be caused by impacts. When an asteroid, comet, or meteoroid strikes the Moon’s surface, they can trigger moonquakes. Earth’s relatively thick atmosphere causes most space debris to burn up from friction before it strikes our planet’s surface. But the Moon isn’t so lucky. Because there is almost no atmosphere, most space debris heading toward the Moon impacts its surface, sometimes causing giant craters and moonquakes."
+      "Moonquakes can be caused by impacts. When an asteroid, comet, or meteoroid strikes the Moon's surface, they can trigger moonquakes. Earth's relatively thick atmosphere causes most space debris to burn up from friction before it strikes our planet's surface. But the Moon isn't so lucky. Because there is almost no atmosphere, most space debris heading toward the Moon impacts its surface, sometimes causing giant craters and moonquakes. Shallow moonquake can last long for hours."
+    );
+  };
+  const ArtificialImpactShow = () => {
+    setStation(false);
+    setDM(false);
+    setSM(false);
+    setMeteriote(false);
+    setTitle("Articial Impact");
+    setAi(true);
+    setDescription(
+      "Artificial Impacts can be caused by objects that are made or produced by human beings rather than occurring naturally.These objects are launch vehicles and lunar modules that were directed at the lunar surface on purpose to create seismic sources of well defined timing and location.Saturn V was an American super heavy-lift launch vehicle developed by NASA under the Apollo program for human exploration of the Moon. Crash landing or launching of these heavy lifting vehicles can cause a moonquake."
     );
   };
   return (
@@ -307,9 +339,12 @@ export default function Home(props) {
           <Box variant='button' onClick={MeteroiteMoonQuakeShow}>
             <SidebarItems key={4} name={"Meteroite Moonquake"} open={open} />
           </Box>
+          <Box variant='button' onClick={ArtificialImpactShow}>
+            <SidebarItems key={6} name={"Artifical Impact"} open={open} />
+          </Box>
           <Link href='/learn_moonquake'>
             <Box variant='button'>
-              <SidebarItems key={4} name={"Learn Moonquake"} open={open} />
+              <SidebarItems key={5} name={"Learn Moonquake"} open={open} />
             </Box>
           </Link>
         </List>
@@ -328,6 +363,7 @@ export default function Home(props) {
           meteroite={meteroite}
           dm={dm}
           sm={sm}
+          ai={ai}
           rotation={rotation}
         />
         {/* {station &&
