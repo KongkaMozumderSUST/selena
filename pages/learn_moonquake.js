@@ -1,8 +1,12 @@
 import { Typography,Box } from "@mui/material";
 import Image from "next/image";
+import image from "../public/skybox2/back.png"
+import Paper from 'material-ui/Paper';
+
 
 export default function LearnMoonquakeMap() {
   return (
+    
     <Box sx={{ m: 8 }}>
       <Typography sx={{ fontFamily: "Comfortaa", fontSize: "14px", m: 8 }}>
         Around the world, there are billions of people living within the danger
@@ -164,5 +168,6 @@ export default function LearnMoonquakeMap() {
         scientific and sample collection apparatus.
       </Typography>
     </Box>
+   
   );
 }
