@@ -33,6 +33,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+
 # Description of our project "Selena":
 
 We have our website here “Selena” where we have created a 3d moon globe. Where we can zoom in and zoom out the globe by clicking on the buttons given below as well as using our mouse pointers. We can stop the rotation of the globe using a button. We can also rotate it with our mouse. Here we can see that we have the positions of landing sites of Apollo lunar modules plotted on our globe. When we click the points we would get their latitudes and longitudes on the popover.
@@ -53,4 +54,17 @@ Deep Moonquakes            |  Shallow Moonquakes
 Meteorite Impact            |  Learning Section     
 :-------------------------:|:-------------------------:
 ![metrt](https://user-images.githubusercontent.com/52793150/193386486-2493e226-2e01-47f7-af0f-f8fb14bbc829.png)|![wes](https://user-images.githubusercontent.com/52793150/193386525-3a113a7e-33e9-491d-a339-320c6eca7f84.png)
+
+
+# The data we used:
+
+PDS: Bundle Information (nasa.gov):
+From the Apollo Passive Seismic Experiment Expanded Event Catalog, we got the seismic data received by Apollo 11-17. We used those data to get the latitude, longitude, and all relevant data of different seismic events such as deep moonquakes, shallow moonquakes, meteorites, artificial impacts, etc. We used those data and visualize them in a 3D globe on our website.
+
+https://www.darts.isas.jaxa.jp/pub/apollo/: By using this JAXA site we get the magnetic tapes to send by the apollo lunar modules back to earth. We used python modules such as Obspy to transform the binary files to time-series to visualize the seismic events more clearly.
+
+# Checkout our deployed version:
+https://moonquake-map.vercel.app/
+
+
 
