@@ -285,7 +285,7 @@ export default function Home(props) {
     setDM(false);
     setSM(false);
     setMeteriote(false);
-    setTitle("Articial Impact");
+    setTitle("Artificial Impact");
     setAi(true);
     setDescription(
       "Artificial Impacts can be caused by objects that are made or produced by human beings rather than occurring naturally.These objects are launch vehicles and lunar modules that were directed at the lunar surface on purpose to create seismic sources of well defined timing and location.Saturn V was an American super heavy-lift launch vehicle developed by NASA under the Apollo program for human exploration of the Moon. Crash landing or launching of these heavy lifting vehicles can cause a moonquake."
